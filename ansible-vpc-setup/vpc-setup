@@ -1,0 +1,33 @@
+vpc_name: "openinno_vpc"
+
+#VPC Range
+vpcCidr: 172.20.0.0/16
+
+#Subnet Ranges
+PubSub1Cidr: 172.20.1.0/24
+PubSub2Cidr: 172.20.2.0/24
+PubSub3Cidr: 172.20.3.0/24
+PrivSub1Cidr: 172.20.4.0/24
+PrivSub2Cidr: 172.20.5.0/24
+PrivSub3Cidr: 172.20.6.0/24
+
+#Region Name
+region: "ap-south-1"
+
+# Zone Name
+zone1: 'ap-south-1a'
+zone2: 'ap-south-1b'
+zone3: 'ap-south-1c'
+
+state: present
+
+# Tags
+vpc_igw_tag: openinno_vpc_igw
+public_rt_tag: public_routetable
+private_rt_tag: private_RT
+
+
+# Bastion Host
+bastion_ami: ami-022d03f649d12a49d
+MYIP: 217.164.231.174/32
+bastion_sg: bastion-sg

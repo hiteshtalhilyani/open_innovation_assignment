@@ -1,0 +1,19 @@
+- hosts: localhosts
+  connection: local
+  gather_facts: False
+  tasks:
+   - name: create keypair
+     ec2_key:
+       name: openai-keypair
+       region: ap-south-1
+    register: keyout
+
+   - debug: 
+      var: keyout
+   
+   - name: store private key
+     copy: 
+      content: "{{keyout.key.private_key}}"
+      dest: ./openai-privatekey
+      mode: 0600
+     when: keyout.changed
