@@ -26,11 +26,5 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         	   = "terra-eks12"
-    key              	   = "state/terraform.tfstate"
-    region         	   = "us-east-1"
-  }
-
   required_version = "~> 1.3"
 }
